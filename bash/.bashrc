@@ -13,7 +13,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-for file in ~/.{bash_exports,bash_aliases,bash_prompt}; do
+for file in ~/.bash_{exports,aliases,functions,prompt}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
