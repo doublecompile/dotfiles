@@ -1,0 +1,12 @@
+export HISTSIZE='32768';
+export HISTFILESIZE="${HISTSIZE}";
+export HISTCONTROL='ignoreboth';
+
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
+
+export LESS_TERMCAP_md="${yellow}";
+
+export MANPAGER='less -X';
+
+export GREP_OPTIONS='--color=auto';
