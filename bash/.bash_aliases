@@ -12,5 +12,6 @@ alias la='ls -A'
 alias l='ls -CF'
 alias "cd.."="cd ../"
 alias up="cd ../"
-alias docker-rm-exited="docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm"
+alias docker-rm-exited="docker ps -q -f status=exited | xargs docker rm"
+alias docker-cleanup-volumes="docker volume ls -qf dangling=true | xargs -r docker volume rm"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
