@@ -44,15 +44,18 @@ export PATH="/usr/local/bin:$PATH"
 
 If `~/.extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
 
-My `~/.extra` looks something like this:
+You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/doublecompile/dotfiles/fork) instead, though.
 
-```bash
-# Git credentials
-# Not in the repository, to prevent people from accidentally committing under my name
-GIT_AUTHOR_NAME="Jonathan Hawk"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="jonathan@libreworks.com"
-GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+## Git
+
+You can place additional global config into `$XDG_CONFIG_HOME/git/config` (See [git-config](https://git-scm.com/docs/git-config#FILES)). On my system, this is `~/.config/git/config`.
+
+My `~/.config/git/config` looks like this:
+
+```
+[user]
+	name = Jonathan Hawk
+	email = jonathan@hawk.ninja
 ```
 
-You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/doublecompile/dotfiles/fork) instead, though.
+Do note that anything in `~/.gitconfig` overwrites these settings.
