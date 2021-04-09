@@ -29,3 +29,10 @@ function fibseq {
         l1=$now
     done
 }
+
+trim() {
+    local var="$*"
+    var="${var#"${var%%[![:space:]]*}"}"
+    var="${var%"${var##*[![:space:]]}"}"   
+    printf '%s' "$var"
+}
