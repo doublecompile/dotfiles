@@ -1,5 +1,3 @@
-[credential]
-	helper = cache
 [alias]
 	graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
 	stat = status -sb
@@ -13,3 +11,10 @@
 	ui = auto
 [push]
 	default = simple
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
